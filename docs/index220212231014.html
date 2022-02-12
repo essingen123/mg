@@ -5,8 +5,8 @@
     <script>
         /* Howdy!! 
 
-                                                        ToDo: Fix that time measure: seem to be some lost code; for example that the life time power refill occurs before the level 
-                                                        actually have started which was a nice animatiopn; and the graph gets faulty in time measure */
+                                        ToDo: Fix that time measure: seem to be some lost code; for example that the life time power refill occurs before the level 
+                                        actually have started which was a nice animatiopn; and the graph gets faulty in time measure */
         if (document.URL.indexOf("127.0.0.1") != -1) {} else {}
     </script>
     <meta charset=utf-8>
@@ -2284,8 +2284,7 @@ background: #000000;
             var lifetimeleftstart = 100;
             // var maxlifetime = 450;
             var maxlifetime = 380;
-            // var extralifetime = 35; // hey don't spoil! :) .. 
-            var extralifetime = 25;
+            var extralifetime = 35;
             var speedish = 0.05;
             // var speedincrease = 0.0025;
             // var speedincrease = 0.0022;
@@ -3054,7 +3053,7 @@ background: #000000;
                             next();
                             haltforlevelup = false;
 
-                        }, 800); // yes let this be greater than.. less; better game play !
+                        }, 1000); // yes let this be greater than.. 
                         gei('megadiv').style.opacity = 1;
                     }, 800);
                     //    }, 10);
