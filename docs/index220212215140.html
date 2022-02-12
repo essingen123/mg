@@ -1628,14 +1628,13 @@
             padding-right: 10%;
             flex-wrap: wrap-reverse;
             background-image: linear-gradient(to bottom, #e6d6c8 0, #f2f2f299 100%);
-            z-index: 9999999;
+            z-index: 9999999
         }
         
         .logo {
             width: 100%;
             margin: 20px auto 0;
-            /* padding: 1px 0 11px; */
-            padding: 12px 0 20px;
+            padding: 1px 0 11px;
             background: rgba(0, 0, 0, .1)
         }
         
@@ -2317,10 +2316,9 @@ background: #000000;
                 if (answered == gei('eval').value) {
                     soundx2 = sound2.clone();
                     soundx2.play(0.16, 0.08);
-                    // todo: consider having this connected to level instead .. 
                     let ploppitcher = score % 30 * 0.01 + parseFloat(1.6 + 10 * (0.6 * parseFloat(1 / (-score % 50 - 8))));
                     soundx2.sourceNode.playbackRate.value = ploppitcher;
-                    soundx2.volume = 0.28 + 0.02 * (2 + score % 4);
+                    soundx2.volume = 0.23 + 0.02 * (2 + score % 4);
                     soundx2b = sound2b.clone();
                     soundx2b.volume = 0.24 + 0.16 + 0.04 * (score % 4);
                     soundx2b.play(0, 0.3);
@@ -2363,7 +2361,6 @@ background: #000000;
                             setTimeout(() => gei('score2').append(elementx), 50);
                         }
                         for (let i = 0; i < Math.floor(scorez / 5); i++) {
-                            scorez = scorez - 5; // UNCLEAR IF THIS IS CORRECT ... 
                             sound4.volume = 0.99;
                             sound4.play(0.4, 0);
                             let elementx = document.createElement('span');
@@ -2489,7 +2486,7 @@ background: #000000;
                     let countfirstfive = 5; // cant change to get ok results for now, todo: fix. 
                     let startradiusfirstfive = 5;
                     // let colorfirstorange = 'orange';
-                    if (score > 129) {
+                    if (score > 200) {
                         colorvariable = '#ff77bb';
                         // countfirstfive = 15;
                         startradiusfirstfive = 30;
@@ -2500,7 +2497,7 @@ background: #000000;
 
                     burst.generate()
                         .tune({
-                            x: 2,
+                            x: 4,
                             y: 40,
                             parent: '#burst',
                             count: countfirstfive,
@@ -2958,71 +2955,72 @@ background: #000000;
                 if (score > 15 && score < 21) {
                     geih('levelbouncer', "<br /><div class='superbounce uppertext'>WELL DONE! </div>");
                 }
-                if (score > 20 && score < 26) {
-                    geih('levelbouncer', "<br /><div class='superbounce uppertext'>FASTER • AWESOME! </div>");
-                }
-                if (score > 25 && score < 51) {
-                    geih('levelbouncer', "<br /><div class='superbounce uppertext'>WOW! GREAT JOB!  </div>");
-                }
-                if (score > 50 && score < 101) {
-                    geih('levelbouncer', "<br /><div class='superbounce uppertext'>FANTASTIC! </div>");
-                }
-                if (score > 100 && score < 150) {
-                    geih('levelbouncer', "<br /><div class='superbounce uppertext'>AWESOME, YOLO! </div>");
-                }
-                if (score > 151) {
-                    geih('levelbouncer', "<br /><div class='superbounce uppertext'>INFINITY &amp; BEYOND! </div>");
-                }
+            }
+            if (score > 20 && score < 26) {
+                geih('levelbouncer', "<br /><div class='superbounce uppertext'>FASTER • AWESOME! </div>");
+            }
+            if (score > 25 && score < 51) {
+                geih('levelbouncer', "<br /><div class='superbounce uppertext'>WOW! GREAT JOB!  </div>");
+            }
+            if (score > 50 && score < 101) {
+                geih('levelbouncer', "<br /><div class='superbounce uppertext'>FANTASTIC! </div>");
+            }
+            if (score > 100 && score < 150) {
+                geih('levelbouncer', "<br /><div class='superbounce uppertext'>AWESOME, YOLO! </div>");
+            }
+            if (score > 151) {
+                geih('levelbouncer', "<br /><div class='superbounce uppertext'>INFINITY &amp; BEYOND! </div>");
+            }
 
-                geirec('leveloverlay', 'hide');
-                geiac('leveloverlay', 'show');
+            geirec('leveloverlay', 'hide');
+            geiac('leveloverlay', 'show');
 
-                /* pause game loop */
-                //  gamerunning = false;
+            /* pause game loop */
+            //  gamerunning = false;
 
-                /* wait for user to click leveloverlay before continue*/
-                //event.preventDefault();
-                // event.stopImmediatePropagation();
-                //  geirec('leveloverlay', 'show'); // DLETE THIS? 
-                // geiac('leveloverlay', 'hide');
-                /* resume game loop */
-                // gamerunning = true;
+            /* wait for user to click leveloverlay before continue*/
+            //event.preventDefault();
+            // event.stopImmediatePropagation();
+            //  geirec('leveloverlay', 'show'); // DLETE THIS? 
+            // geiac('leveloverlay', 'hide');
+            /* resume game loop */
+            // gamerunning = true;
+
+            setTimeout(() => {
+                geiac('leveloverlay', 'hide');
+
 
                 setTimeout(() => {
-                    geiac('leveloverlay', 'hide');
-
-
+                    geirec('leveloverlay', 'show');
+                    haltforlevelup = false;
+                    lifetimeleft = lifetimeleft + (levelextralivemulti * extralifetime);
+                    sound7.volume = 0.8;
+                    sound7.play();
+                    gei('level').innerHTML = level;
+                    if (powerup1 < 3) {
+                        powerup1++;
+                        powerup1++;
+                        updatepowerups();
+                    }
+                    var levelanimation = gei('level2');
+                    levelanimation.classList.add('animatelevel2');
+                    levelanimation.addEventListener("animationend", function() {
+                        levelanimation.classList.remove('animatelevel2');
+                    }, false);
+                    window.requestAnimationFrame(step);
                     setTimeout(() => {
-                        geirec('leveloverlay', 'show');
+                        next();
                         haltforlevelup = false;
-                        lifetimeleft = lifetimeleft + (levelextralivemulti * extralifetime);
-                        sound7.volume = 0.8;
-                        sound7.play();
-                        gei('level').innerHTML = level;
-                        if (powerup1 < 3) {
-                            powerup1++;
-                            powerup1++;
-                            updatepowerups();
-                        }
-                        var levelanimation = gei('level2');
-                        levelanimation.classList.add('animatelevel2');
-                        levelanimation.addEventListener("animationend", function() {
-                            levelanimation.classList.remove('animatelevel2');
-                        }, false);
-                        window.requestAnimationFrame(step);
-                        setTimeout(() => {
-                            next();
-                            haltforlevelup = false;
 
-                        }, 2);
-                        gei('megadiv').style.opacity = 1;
-                    }, 800);
-                    //    }, 10);
+                    }, 2);
+                    gei('megadiv').style.opacity = 1;
+                }, 800);
+                //    }, 10);
 
 
-                }, 1400);
-                //   }, 10);
-                // }, false); /* if click.. handler on.. */
+            }, 1400);
+            //   }, 10);
+            // }, false); /* if click.. handler on.. */
             }
 
             /* Function, Info Screen overlay */

@@ -1628,14 +1628,13 @@
             padding-right: 10%;
             flex-wrap: wrap-reverse;
             background-image: linear-gradient(to bottom, #e6d6c8 0, #f2f2f299 100%);
-            z-index: 9999999;
+            z-index: 9999999
         }
         
         .logo {
             width: 100%;
             margin: 20px auto 0;
-            /* padding: 1px 0 11px; */
-            padding: 12px 0 20px;
+            padding: 1px 0 11px;
             background: rgba(0, 0, 0, .1)
         }
         
@@ -2363,7 +2362,6 @@ background: #000000;
                             setTimeout(() => gei('score2').append(elementx), 50);
                         }
                         for (let i = 0; i < Math.floor(scorez / 5); i++) {
-                            scorez = scorez - 5; // UNCLEAR IF THIS IS CORRECT ... 
                             sound4.volume = 0.99;
                             sound4.play(0.4, 0);
                             let elementx = document.createElement('span');
@@ -2489,7 +2487,7 @@ background: #000000;
                     let countfirstfive = 5; // cant change to get ok results for now, todo: fix. 
                     let startradiusfirstfive = 5;
                     // let colorfirstorange = 'orange';
-                    if (score > 129) {
+                    if (score > 199) {
                         colorvariable = '#ff77bb';
                         // countfirstfive = 15;
                         startradiusfirstfive = 30;
@@ -2500,7 +2498,7 @@ background: #000000;
 
                     burst.generate()
                         .tune({
-                            x: 2,
+                            x: 4,
                             y: 40,
                             parent: '#burst',
                             count: countfirstfive,

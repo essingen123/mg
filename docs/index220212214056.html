@@ -1628,14 +1628,13 @@
             padding-right: 10%;
             flex-wrap: wrap-reverse;
             background-image: linear-gradient(to bottom, #e6d6c8 0, #f2f2f299 100%);
-            z-index: 9999999;
+            z-index: 9999999
         }
         
         .logo {
             width: 100%;
             margin: 20px auto 0;
-            /* padding: 1px 0 11px; */
-            padding: 12px 0 20px;
+            padding: 1px 0 11px;
             background: rgba(0, 0, 0, .1)
         }
         
@@ -2283,8 +2282,7 @@ background: #000000;
             var extralifetime = 35;
             var speedish = 0.05;
             // var speedincrease = 0.0025;
-            // var speedincrease = 0.0022;
-            var speedincrease = 0.0042;
+            var speedincrease = 0.0022;
             var startlevelspeed = 0.03;
             var alternate, diffspin = 0;
             var losslifetime = -20;
@@ -2317,10 +2315,9 @@ background: #000000;
                 if (answered == gei('eval').value) {
                     soundx2 = sound2.clone();
                     soundx2.play(0.16, 0.08);
-                    // todo: consider having this connected to level instead .. 
                     let ploppitcher = score % 30 * 0.01 + parseFloat(1.6 + 10 * (0.6 * parseFloat(1 / (-score % 50 - 8))));
                     soundx2.sourceNode.playbackRate.value = ploppitcher;
-                    soundx2.volume = 0.28 + 0.02 * (2 + score % 4);
+                    soundx2.volume = 0.23 + 0.02 * (2 + score % 4);
                     soundx2b = sound2b.clone();
                     soundx2b.volume = 0.24 + 0.16 + 0.04 * (score % 4);
                     soundx2b.play(0, 0.3);
@@ -2363,7 +2360,6 @@ background: #000000;
                             setTimeout(() => gei('score2').append(elementx), 50);
                         }
                         for (let i = 0; i < Math.floor(scorez / 5); i++) {
-                            scorez = scorez - 5; // UNCLEAR IF THIS IS CORRECT ... 
                             sound4.volume = 0.99;
                             sound4.play(0.4, 0);
                             let elementx = document.createElement('span');
@@ -2486,26 +2482,15 @@ background: #000000;
                     // let colorvariable = "#" + Math.floor(Math.random() * 16777215).toString(16);
 
                     let colorvariable = '#ffffff';
-                    let countfirstfive = 5; // cant change to get ok results for now, todo: fix. 
-                    let startradiusfirstfive = 5;
-                    // let colorfirstorange = 'orange';
-                    if (score > 129) {
-                        colorvariable = '#ff77bb';
-                        // countfirstfive = 15;
-                        startradiusfirstfive = 30;
-                        colorfirstorange = '#ff6699';
-
-                    }
-                    // let colorvariable = 'white';
-
+                    let countfirstfive = 15;
                     burst.generate()
                         .tune({
-                            x: 2,
+                            x: 4,
                             y: 40,
                             parent: '#burst',
                             count: countfirstfive,
                             radius: {
-                                5: (26 + 0.5 * score) + 20
+                                5: (26 + 0.5 * score)
                             },
                             children: {
                                 radius: {
@@ -2955,11 +2940,8 @@ background: #000000;
                 if (score > 5 && score < 16) {
                     geih('levelbouncer', "<br /><div class='superbounce uppertext'>WOW! SO AMAZING! </div>");
                 }
-                if (score > 15 && score < 21) {
+                if (score > 15 && score < 26) {
                     geih('levelbouncer', "<br /><div class='superbounce uppertext'>WELL DONE! </div>");
-                }
-                if (score > 20 && score < 26) {
-                    geih('levelbouncer', "<br /><div class='superbounce uppertext'>FASTER • AWESOME! </div>");
                 }
                 if (score > 25 && score < 51) {
                     geih('levelbouncer', "<br /><div class='superbounce uppertext'>WOW! GREAT JOB!  </div>");
