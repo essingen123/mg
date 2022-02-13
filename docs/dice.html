@@ -3,27 +3,23 @@
 
 <head>
     <script>
-        //Howdy!! 
-        // This is just a prototype; focus on making a more fun Quiz oriented UI / Experience
-        // Coded mostly on a mobile device (iPhone SE2)
-        // So code needs allot of refactoring and perfomance improvements
-        // ToDo: Refactor Code; make it consistent, more DRY, considering making it pre ES6 compatible with older devices such as iPad 2
-        // ToDo: Create a hiscore board and users
-        // ToDo; Measure and optimize code for performance, make it more versatile for general quizes
+        /* Howdy!! 
 
+                                                                                                                                                                                                                                                                                                                                                                                                                                        ToDo: Fix that time measure: seem to be some lost code; for example that the life time power refill occurs before the level 
+                                                                                                                                                                                                                                                                                                                                                                                                                                        actually have started which was a nice animatiopn; and the graph gets faulty in time measure */
         if (document.URL.indexOf("127.0.0.1") != -1) {} else {}
     </script>
     <meta charset=utf-8>
     <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
     <meta http-equiv=X-UA-Compatible content="IE=edge">
-    <meta property=og:title content="Math Game Pi">
+    <meta property=og:title content="Alice + Alvas Spel Pi">
     <meta property=og:type content=website>
     <meta property=og:url content=https://github.io/mathgame />
     <meta property=og:image content=https://github.io/mathgame/amathgame-screen.png>
     <meta property=og:description content="A Math and JS Code Quiz Game">
     <meta name=twitter:card content=summary>
     <meta name=twitter:site content=@mathquizgame>
-    <meta name=twitter:title content="Math Game Pi">
+    <meta name=twitter:title content="Alice + Alvas Spel Pi">
     <meta name=twitter:description content="A Math and JS Code Quiz Game">
     <meta name=twitter:image content=https://github.io/mathgame/amathgame-screen.png>
     <link rel=apple-touch-icon sizes=180x180 href=apple-touch-icon.png>
@@ -71,8 +67,8 @@
 
     <meta name="apple-mobile-web-app-capable" content="yes">
     <!-- <meta name="apple-mobile-web-app-status-bar-style" content="purple"> -->
-    <meta name="apple-mobile-web-app-title" content="Math Game Pi">
-    <title>Math Game Pi 😀 • v0.0089b • Coded on a Mobile, WPA Experiment </title>
+    <meta name="apple-mobile-web-app-title" content="Alice + Alvas Spel Pi">
+    <title>Alice + Alvas Spel </title>
     <link href="https://fonts.googleapis.com/css?family=Roboto Condensed" rel=stylesheet>
     <style>
         .uppertext {
@@ -970,10 +966,12 @@
             white-space: pre-wrap;
             word-break: break-all;
             word-wrap: break-word;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             text-shadow: 0 0 20px #fff, 0 0 70px #fed;
             letter-spacing: -4px;
             line-height: 2.5rem;
+            /* A+A!*/
+            /* line-height: 5rem; */
             padding-left: 0;
             padding-right: 0;
             margin-left: 0;
@@ -1016,7 +1014,7 @@
         .answer2,
         .moutput {
             text-align: center;
-            font-style: italic
+            /* font-style: italic */
         }
         
         .answer2 {
@@ -1305,9 +1303,10 @@
             border: 1px solid rgba(84, 84, 84, .2);
             padding: 0;
             width: 33.3%;
-            font-size: 150%;
+            /* font-size: 150%; */
+            font-size: 250%;
             color: #dfd4e4;
-            min-height: 54px;
+            min-height: 94px;
             line-height: 1;
             font-stretch: ultra-condensed;
             display: block;
@@ -1586,7 +1585,8 @@
         .fox {
             height: 100%;
             display: inline-flex;
-            font-size: 2.5rem;
+            font-size: 4.5rem;
+            /* font-size: 2.5rem; */
             justify-content: center
         }
         
@@ -2164,16 +2164,16 @@ background: #000000;
             <canvas class=canvas></canvas>
             <div class=scoreoverlaywrapper>
                 <div class=logo>
-                    <!-- <h1><span style=color:#FFF>Math Game</span>
+                    <!-- <h1><span style=color:#FFF>Alice + Alvas Spel</span>
                         <br> Pi 🏹
                     </h1> -->
                     <div class="title">
                         <!-- <h3>TRAIN</h3> -->
-                        <h1>MATH GAME <br> PI 🏹</h1>
+                        <h1>Alice&amp;Alvas<br> Spel 🏹</h1>
                         <!-- <h3>H O W M A N Y <strong>C A N Y O U C R A N K before times up?</strong></h3> -->
                     </div>
                 </div>
-                <span class="spansmall slideinfromleft" style=font-weight:bolder!important> SCROLL TO START</span>
+                <span class="spansmall slideinfromleft" style=font-weight:bolder!important> ~~~</span>
                 <div class="wrapper tilt">
                     <div id=scoring> SCORE <span class=b id=score3></span>
                         <div id=score3x></div>
@@ -2182,9 +2182,9 @@ background: #000000;
                     <div id=hiscoring> HISCORE <span class=b id=hiscore3></span> </div>
                 </div>
                 <span class=gradient>
-                    <button id=bigstartbutton class=superbounce><i>Press n Swipe me up!</i> ⚡️</button>
+                    <button id=bigstartbutton class=superbounce><i>Starta</i> ⚡️</button>
                 </span>
-                <span class="spansmall slideinfrom">© Copyleft 2022 All nights reserved <br>to it's respective owner.
+                <span class="spansmall slideinfrom">Prototyp 2022 <br>
                 </span>
             </div>
         </div>
@@ -2630,9 +2630,25 @@ background: #000000;
 
             function makebuttons() {
                 gei('buttons').innerHTML = '<div class="buttonswrap2" id="buttonswrap2"></div>';
-                var arry = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+                var arry = [1, 2, 3, 4, 5, 6, 9, 0];
+
+                // var arry = [1, 2, 3, 4, 5, 6];
                 arry.forEach(iok => {
-                    gei('buttonswrap2').innerHTML += "<button class='numkey' value='" + iok + "'>" + iok + "</button>";
+
+                    iok2 = "" + iok; ///
+
+
+                    // FOR A&A
+                    iok2 = iok2.replace('1', '⚀');
+                    iok2 = iok2.replace('2', '⚁');
+                    iok2 = iok2.replace('3', '⚂');
+                    iok2 = iok2.replace('4', '⚃');
+                    iok2 = iok2.replace('5', '⚄');
+                    iok2 = iok2.replace('6', '⚅');
+
+                    if (iok > 0 && iok < 7) {
+                        gei('buttonswrap2').innerHTML += "<button class='numkey' value='" + iok + "'>" + iok2 + "</button>";
+                    }
                     if (iok == 9)
                         gei('buttonswrap2').innerHTML += "<button class='numkey' value='clear' style='font-size:40%;'>❌</button>";
                     if (iok == 0)
@@ -2780,23 +2796,445 @@ background: #000000;
 
 
                 c(`0+3`);
+
                 string = "14159265358979323846264338327950288419716939937510582097494459230781640628620899862803482534211706798214808651328230664709384460955058223172535940812848111745028410270193852110555964462294895493038196442881097566593344612847564823378678316527120190914564856692346034861045432664821339360726 024914127372458700660631558817488152092096282925409171536436 7892590360 0113305305 4882046652 1384146951 9415116094 3305727036 5759591953 0921861173 8193261179 3105118548 0744623799 6274956735 1885752724 8912279381 8301194912 9833673362 4406566430 8602139494 6395224737 1907021798 6094370277 0539217176 2931767523 8467481846 7669405132 0005681271 4526356082 7785771342 7577896091 7363717872 1468440901 2249534301 4654958537 1050792279 6892589235 4201995611 2129021960 8640344181 5981362977 4771309960 5187072113 4999999837 2978049951 0597317328 1609631859 5024459455 3469083026 4252230825 3344685035 2619311881 7101000313 7838752886 5875332083 8142061717 7669147303 5982534904 2875546873 1159562863 8823537875 9375195778 1857780532 1712268066 1300192787 6611195909 2164201989";
                 string = string.replace(/\D/g, '');
                 op = 0;
-                while (op >= 0 && op < 1000) {
-                    mathie = string[op++] + "+" + string[op];
-                    if (eval(mathie) > 9) {
-                        mathie = string[--op] + '-' + string[++op];
-                    }
-                    if (eval(mathie) < 0) {
-                        string[--op];
-                        mathie = string[op++] + "*" + string[op];
-                    }
-                    c(mathie);
-                    op++;
-                }
+
+                // simpplified for a+a
+                // while (op >= 0 && op < 1000) {
+
+                //     while (op++ == 0 || op == 0) {
+                //         //op++; // eh do nothing? 
+                //     }
+
+                //     // --op;
+
+                //     mathie = string[op++] + "+" + string[op];
+
+
+
+                //     if (eval(mathie) > 5) {
+                //         op++;
+                //     } else {
+                //         c(mathie);
+                //         op++;
+                //     }
+                // }
+
+                c(`1+1`);
+                c(`1+2`);
+                c(`1+3`);
+                c(`1+4`);
+                c(`1+5`);
+                c(`2+2`);
+                c(`2+1`);
+                c(`2+3`);
+                c(`4+1`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`5+1`);
+                c(`3+3`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`3+1`);
+                c(`3+3`);
+                c(`1+1`);
+                c(`1+2`);
+                c(`1+3`);
+                c(`1+4`);
+                c(`1+5`);
+                c(`2+2`);
+                c(`2+1`);
+                c(`2+3`);
+                c(`4+1`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`5+1`);
+                c(`3+3`);
+                c(`4+2`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`5+1`);
+                c(`3+3`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`3+1`);
+
+                c(`1+5`);
+                c(`2+2`);
+                c(`2+1`);
+                c(`2+3`);
+                c(`4+1`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`5+1`);
+                c(`3+3`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`3+1`);
+                c(`3+3`);
+                c(`3+3`);
+                c(`2+2`);
+                c(`2+1`);
+                c(`3+1`);
+                c(`5+1`);
+                c(`3+3`);
+                c(`4+2`);
+                c(`2+2`);
+                c(`2+1`);
+                c(`3+1`);
+                c(`5+1`);
+                c(`3+3`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`3+1`);
+                c(`3+3`);
+                c(`2+1`);
+                c(`3+1`);
+                c(`5+1`);
+                c(`3+3`);
+                c(`3+1`);
+                c(`3+1`);
+                c(`3+3`);
+                c(`2+1`);
+                c(`3+1`);
+                c(`5+1`);
+                c(`3+3`);
+
+                c(`1+5`);
+                c(`2+2`);
+                c(`2+1`);
+                c(`2+3`);
+                c(`4+1`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`5+1`);
+                c(`3+3`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`3+1`);
+                c(`3+3`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`3+1`);
+                c(`3+3`);
+                c(`1+1`);
+                c(`1+2`);
+                c(`1+3`);
+                c(`1+4`);
+                c(`1+5`);
+                c(`2+2`);
+                c(`4+2`);
+                c(`4+1`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`5+1`);
+                c(`3+3`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`3+1`);
+                c(`3+3`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`3+1`);
+                c(`3+3`);
+                c(`1+1`);
+                c(`1+2`);
+                c(`1+3`);
+                c(`1+4`);
+                c(`1+5`);
+                c(`2+2`);
+                c(`4+2`);
+                c(`4+1`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`5+1`);
+                c(`3+3`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`3+1`);
+                c(`3+3`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`3+1`);
+                c(`3+3`);
+                c(`1+1`);
+                c(`1+2`);
+                c(`1+3`);
+                c(`1+4`);
+                c(`1+5`);
+                c(`2+2`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`3+1`);
+                c(`3+3`);
+                c(`1+1`);
+                c(`1+2`);
+                c(`1+3`);
+                c(`1+4`);
+                c(`1+5`);
+                c(`2+2`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`3+1`);
+                c(`3+3`);
+                c(`1+1`);
+                c(`1+2`);
+                c(`1+3`);
+                c(`1+4`);
+                c(`1+5`);
+                c(`2+2`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`3+1`);
+                c(`3+3`);
+                c(`2+3`);
+                c(`4+1`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`5+1`);
+                c(`3+3`);
+                c(`1+2`);
+                c(`2+3`);
+                c(`4+1`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`5+1`);
+                c(`3+3`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`3+1`);
+                c(`3+3`);
+                c(`1+1`);
+                c(`1+2`);
+                c(`1+3`);
+                c(`1+4`);
+                c(`1+5`);
+                c(`2+2`);
+                c(`2+1`);
+                c(`5+1`);
+                c(`3+3`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`3+1`);
+                c(`3+3`);
+                c(`1+3`);
+                c(`1+4`);
+                c(`1+5`);
+                c(`2+2`);
+                c(`2+1`);
+                c(`2+3`);
+                c(`4+1`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`5+1`);
+                c(`3+3`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`3+1`);
+                c(`3+3`);
+                c(`1+1`);
+                c(`1+2`);
+                c(`1+3`);
+                c(`1+4`);
+                c(`1+5`);
+                c(`2+2`);
+                c(`2+1`);
+                c(`2+3`);
+                c(`4+1`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`5+1`);
+                c(`3+3`);
+                c(`4+2`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`5+1`);
+                c(`3+3`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`3+1`);
+
+                c(`1+5`);
+                c(`2+2`);
+                c(`2+1`);
+                c(`2+3`);
+                c(`4+1`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`5+1`);
+                c(`3+3`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`3+1`);
+                c(`3+3`);
+                c(`3+3`);
+                c(`2+2`);
+                c(`2+1`);
+                c(`3+1`);
+                c(`5+1`);
+                c(`3+3`);
+                c(`4+2`);
+                c(`2+2`);
+                c(`2+1`);
+                c(`3+1`);
+                c(`5+1`);
+                c(`3+3`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`3+1`);
+                c(`3+3`);
+                c(`2+1`);
+                c(`3+1`);
+                c(`5+1`);
+                c(`3+3`);
+                c(`3+1`);
+                c(`3+1`);
+                c(`3+3`);
+                c(`2+1`);
+                c(`3+1`);
+                c(`5+1`);
+                c(`3+3`);
+
+                c(`1+5`);
+                c(`2+2`);
+                c(`2+1`);
+                c(`2+3`);
+                c(`4+1`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`5+1`);
+                c(`3+3`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`3+1`);
+                c(`3+3`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`3+1`);
+                c(`3+3`);
+                c(`1+1`);
+                c(`1+2`);
+                c(`1+3`);
+                c(`1+4`);
+                c(`1+5`);
+                c(`2+2`);
+                c(`4+2`);
+                c(`4+1`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`5+1`);
+                c(`3+3`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`3+1`);
+                c(`3+3`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`3+1`);
+                c(`3+3`);
+                c(`1+1`);
+                c(`1+2`);
+                c(`1+3`);
+                c(`1+4`);
+                c(`1+5`);
+                c(`2+2`);
+                c(`4+2`);
+                c(`4+1`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`5+1`);
+                c(`3+3`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`3+1`);
+                c(`3+3`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`3+1`);
+                c(`3+3`);
+                c(`1+1`);
+                c(`1+2`);
+                c(`1+3`);
+                c(`1+4`);
+                c(`1+5`);
+                c(`2+2`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`3+1`);
+                c(`3+3`);
+                c(`1+1`);
+                c(`1+2`);
+                c(`1+3`);
+                c(`1+4`);
+                c(`1+5`);
+                c(`2+2`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`3+1`);
+                c(`3+3`);
+                c(`1+1`);
+                c(`1+2`);
+                c(`1+3`);
+                c(`1+4`);
+                c(`1+5`);
+                c(`2+2`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`3+1`);
+                c(`3+3`);
+                c(`2+3`);
+                c(`4+1`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`5+1`);
+                c(`3+3`);
+                c(`1+2`);
+                c(`2+3`);
+                c(`4+1`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`5+1`);
+                c(`3+3`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`3+1`);
+                c(`3+3`);
+                c(`1+1`);
+                c(`1+2`);
+                c(`1+3`);
+                c(`1+4`);
+                c(`1+5`);
+                c(`2+2`);
+                c(`2+1`);
+                c(`5+1`);
+                c(`3+3`);
+                c(`4+2`);
+                c(`3+1`);
+                c(`3+1`);
+                c(`3+3`);
+
+
+
+                // string = "14159265358979323846264338327950288419716939937510582097494459230781640628620899862803482534211706798214808651328230664709384460955058223172535940812848111745028410270193852110555964462294895493038196442881097566593344612847564823378678316527120190914564856692346034861045432664821339360726 024914127372458700660631558817488152092096282925409171536436 7892590360 0113305305 4882046652 1384146951 9415116094 3305727036 5759591953 0921861173 8193261179 3105118548 0744623799 6274956735 1885752724 8912279381 8301194912 9833673362 4406566430 8602139494 6395224737 1907021798 6094370277 0539217176 2931767523 8467481846 7669405132 0005681271 4526356082 7785771342 7577896091 7363717872 1468440901 2249534301 4654958537 1050792279 6892589235 4201995611 2129021960 8640344181 5981362977 4771309960 5187072113 4999999837 2978049951 0597317328 1609631859 5024459455 3469083026 4252230825 3344685035 2619311881 7101000313 7838752886 5875332083 8142061717 7669147303 5982534904 2875546873 1159562863 8823537875 9375195778 1857780532 1712268066 1300192787 6611195909 2164201989";
+                // string = string.replace(/\D/g, '');
+                // op = 0;
+                // while (op >= 0 && op < 1000) {
+                //     mathie = string[op++] + "+" + string[op];
+                //     if (eval(mathie) > 9) {
+                //         mathie = string[--op] + '-' + string[++op];
+                //     }
+                //     if (eval(mathie) < 0) {
+                //         string[--op];
+                //         mathie = string[op++] + "*" + string[op];
+                //     }
+                //     c(mathie);
+                //     op++;
+                // }
 
             }
+
 
             function startscreen() {
                 // Hmm test the logic here; however this seems to works best with iOS 14+
@@ -3079,6 +3517,32 @@ background: #000000;
                     d = document.createElement("div");
                     d.classList.add("fox");
                     let a2 = a.replace('*', '•');
+
+                    // FOR A&A
+                    // assync bug .. im lazy 
+                    a2 = a2.replace('1', '⚀');
+                    a2 = a2.replace('2', '⚁');
+                    a2 = a2.replace('3', '⚂');
+                    a2 = a2.replace('4', '⚃');
+                    a2 = a2.replace('5', '⚄');
+                    a2 = a2.replace('6', '⚅');
+
+
+                    a2 = a2.replace('1', '⚀');
+                    a2 = a2.replace('2', '⚁');
+                    a2 = a2.replace('3', '⚂');
+                    a2 = a2.replace('4', '⚃');
+                    a2 = a2.replace('5', '⚄');
+                    a2 = a2.replace('6', '⚅');
+
+
+                    a2 = a2.replace('1', '⚀');
+                    a2 = a2.replace('2', '⚁');
+                    a2 = a2.replace('3', '⚂');
+                    a2 = a2.replace('4', '⚃');
+                    a2 = a2.replace('5', '⚄');
+                    a2 = a2.replace('6', '⚅');
+
                     d.innerHTML = (a2);
                     gei('moutput').append(d);
                     d.classList.add("fi");
@@ -3124,13 +3588,29 @@ background: #000000;
                             d = document.createElement("div");
                             d.classList.add("fox");
                             let a2 = a.replace('*', '•');
+
+
+                            // FOR A&A
+                            a2 = a2.replace('1', '⚀');
+                            a2 = a2.replace('2', '⚁');
+                            a2 = a2.replace('3', '⚂');
+                            a2 = a2.replace('4', '⚃');
+                            a2 = a2.replace('5', '⚄');
+                            a2 = a2.replace('6', '⚅');
+
+
+
+
                             d.innerHTML = (a2);
-                            gei('moutput').append(d);
+
+                            gei('moutput').append(d + '123123');
+
                             d.classList.add("fi");
                             let rightanswer = "" + evalQ(a);
                             gei('eval').value = rightanswer;
                             sethint();
                             w++;
+
 
                         }, timepause2);
                     }, timepause1);
