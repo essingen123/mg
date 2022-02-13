@@ -1,4 +1,4 @@
-<a target='_blank' href='https://essingen123.github.io/mg'><img border=0 src="https://github.com/essingen123/mg/blob/main/mathgame-animated2-gif.gif?raw=true" height="auto" width="300" style=border-radius:50%></a> <br />
+<a target='_blank' href='https://essingen123.github.io/mg'><img border=0 src="https://github.com/essingen123/mg/blob/main/mathgame-animated2-gif.gif?raw=true" height="auto" width="400" style=border-radius:50%></a> <br />
 <b>A Math Game with Pi decimals</b> I made for my kids, ready to try <a target="_blank" href='https://essingen123.github.io/mg'>here</a><br /> and hey, don't miss out on the quite polished sound experience 🔊😀👍
 
 Yadda
