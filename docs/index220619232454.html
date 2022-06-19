@@ -180,7 +180,7 @@
             position: absolute;
             height: 100%;
             width: 50%;
-            overflow: hidden;
+            overflow: hidden
         }
         
         .left {
@@ -698,7 +698,7 @@
         .bodycolor {
             max-width: 520px;
             margin: 0 auto;
-            overflow: hidden !important
+            overflow: none !important
         }
         
         @font-face {
@@ -1341,7 +1341,6 @@
             background: #121212;
             background: radial-gradient(circle at 50% 30%, transparent, #6a686855 50%, rgba(47, 22, 60, .2) 94%, rgba(126, 0, 205, .2) 105% 50%);
             font: 1.2rem"Roboto Condensed", sans-serif;
-            overflow-x:hidden !important;
             overflow: auto;
             height: calc(100% + 140px)
         }
@@ -1628,7 +1627,6 @@
             width: 70%;
             border-radius: 8px;
             position: relative;
-            overflow-x: hidden !important;
             overflow: visible;
             box-shadow: 22px 0 30px -11px rgba(70, 38, 31, .4), -22px 0 30px -11px rgba(70, 38, 31, .4);
             display: flex;
@@ -1984,6 +1982,7 @@
         
         .cssProgress .progress2 {
             position: relative;
+            overflow: hidden;
             width: 100%;
             font-family: Roboto, sans-serif;
             overflow: visible;
@@ -2852,8 +2851,7 @@ background: #000000;
                     function preventDefault(e) {
                         if (gamerunning == true) {} else {
                             // hmm .. not sure if this is the right way to do it
-                            document.body.style.overflowX = 'hidden';
-                            document.body.style.overflowY = 'visible';
+                            document.body.style.overflow = 'visible';
                         }
                         if ((window.innerHeight + window.scrollY) + 3 >= document.body.offsetHeight - 1) {
                             window.addEventListener('touchmove' || 'touchdowm' || 'touchend' || 'mousedown' || 'dblclick', event => {
@@ -3185,10 +3183,7 @@ background: #000000;
                     }
                 } else {
                     setTimeout(() => gei('buttonswrapper').classList.add('hide'), 1);
-                    document.body.style.overflowX = 'hidden';
-                    document.body.style.overflowY = 'visible'; 
-                    
-                    // document.body.style.overflow = 'visible';
+                    document.body.style.overflow = 'visible';
                     gamerunning = false;
                     levelbefore = 1;
                     sound8.stop();
